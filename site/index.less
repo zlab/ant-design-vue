@@ -36,7 +36,9 @@
   font-weight: 500;
   background: rgba(0, 0, 0, 0.02);
 }
-.api-container pre code {
+
+pre > code[class*='lang-'],
+pre > code[class*='language-'] {
   padding: 12px 20px;
   overflow: auto;
 }
@@ -120,7 +122,7 @@
     display: none;
   }
 }
-.snd-ad{
+.snd-ad {
   padding-bottom: 10px;
 }
 .sponsorsWrap {
@@ -179,14 +181,14 @@
   }
 }
 .toc-affix {
-  width: 120px;
+  width: 150px;
   position: fixed;
   top: 100px;
   right: 10px;
   bottom: 250px;
 }
 .toc-affix .ant-anchor-wrapper {
-  max-height: calc(~'100vh - 350px') !important;
+  max-height: calc(~'100vh - 400px') !important;
 }
 
 .drawer-wrapper .drawer-content {

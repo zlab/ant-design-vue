@@ -205,13 +205,13 @@ export interface WrappedFormUtils {
    * Get the specified fields' error. If you don't specify a parameter, you will get all fields' error.
    * @type Function (Function([names: string[]))
    */
-  getFieldsError(names: string[]): object;
+  getFieldsError(names?: string[]): object;
 
   /**
    * Get the specified fields' values. If you don't specify a parameter, you will get all fields' values.
    * @type Funtion (Function([fieldNames: string[]))
    */
-  getFieldsValue(fieldNames: string[]): object;
+  getFieldsValue(fieldNames?: string[]): object;
 
   /**
    * Get the value of a field.
@@ -261,7 +261,11 @@ export interface WrappedFormUtils {
    * If you don't specify the parameter of fieldNames, you will validate all fields.
    * @type Function
    */
-  validateFields(fieldNames: string[], options: ValidateFieldOptions, callback: ValidateCallback): void;
+  validateFields(
+    fieldNames: string[],
+    options: ValidateFieldOptions,
+    callback: ValidateCallback,
+  ): void;
   validateFields(fieldNames: string[], callback: ValidateCallback): void;
   validateFields(options: ValidateFieldOptions, callback: ValidateCallback): void;
   validateFields(callback: ValidateCallback): void;
@@ -272,13 +276,16 @@ export interface WrappedFormUtils {
    * form will be automatically scrolled to the target field area.
    * @type Function
    */
-  validateFieldsAndScroll(fieldNames?: string[], options?: Object, callback?: ValidateCallback): void;
+  validateFieldsAndScroll(
+    fieldNames?: string[],
+    options?: Object,
+    callback?: ValidateCallback,
+  ): void;
   validateFieldsAndScroll(fieldNames?: string[], callback?: ValidateCallback): void;
   validateFieldsAndScroll(options?: Object, callback?: ValidateCallback): void;
   validateFieldsAndScroll(callback?: ValidateCallback): void;
   validateFieldsAndScroll(): void;
 }
-
 
 export interface IformCreateOption {
   /**
@@ -356,6 +363,12 @@ export declare class Form extends AntdComponent {
   options: object;
 
   createForm(context: Vue, options?: IformCreateOption): any;
+
+  /**
+   * Convert props to field value
+   * @param field
+   */
+  createFormField(field: any): any;
 }
 
 declare module 'vue/types/vue' {

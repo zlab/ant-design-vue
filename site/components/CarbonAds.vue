@@ -1,12 +1,17 @@
 <script>
 import axios from 'axios';
 const carbonUrls = {
-  'vuecomponent.github.io': '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=vuecomponentgithubio',
-  'tangjinzhou.gitee.io':'//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=tangjinzhougiteeio',
-  'ant-design-vue.gitee.io':'//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=antdesignvuegiteeio',
+  'vuecomponent.github.io':
+    '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=vuecomponentgithubio',
+  'tangjinzhou.gitee.io':
+    '//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=tangjinzhougiteeio',
+  'ant-design-vue.gitee.io':
+    '//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=antdesignvuegiteeio',
   'vue.ant.design': '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=vueantdesign',
 };
-const carbonUrl = carbonUrls[location.host] || '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=vueantdesign';
+const carbonUrl =
+  carbonUrls[location.host] ||
+  '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=vueantdesign';
 export default {
   props: {
     isMobile: Boolean,
@@ -17,18 +22,17 @@ export default {
       // if(isGitee) {
       //   adId = '#cf';
       // }
-      if(e.path !== t.path && this.$el.querySelector(adId)){
-        this.$el.innerHTML = "";
+      if (e.path !== t.path && this.$el.querySelector(adId)) {
+        this.$el.innerHTML = '';
         this.load();
       }
       this.adInterval && clearInterval(this.adInterval);
-      this.adInterval = setInterval(()=>{
-        if(!this.$el.querySelector(adId)){
-          this.$el.innerHTML = "";
+      this.adInterval = setInterval(() => {
+        if (!this.$el.querySelector(adId)) {
+          this.$el.innerHTML = '';
           this.load();
         }
       }, 20000);
-
     },
   },
   mounted() {
@@ -41,36 +45,38 @@ export default {
       //   .then(function (response) {
       //     document.getElementById("codefund-ads").innerHTML = response.data;
       //   });
-      // } else 
-      if(carbonUrl) {
-        const e = document.createElement("script");
-        e.id = "_carbonads_js";
+      // } else
+      if (carbonUrl) {
+        const e = document.createElement('script');
+        e.id = '_carbonads_js';
         e.src = carbonUrl;
         this.$el.appendChild(e);
       }
     },
   },
-  render () {
-    return (
-      <div id="carbon-ads" class={this.isMobile ? 'carbon-mobile':''}/>
-    );
+  render() {
+    return <div id="carbon-ads" class={this.isMobile ? 'carbon-mobile' : ''} />;
   },
 };
 </script>
 <style lang="less">
- #carbon-ads {
+#carbon-ads {
+  width: 280px;
+  float: right;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  padding: 0;
   overflow: hidden;
-  width: 145px;
-  position: fixed;
   z-index: 9;
-  bottom: 10px;
-  right: 10px;
-  padding: 10px;
   background-color: #fff;
   border-radius: 3px;
   font-size: 13px;
   background: #f5f5f5;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+#carbonads {
+  overflow: hidden;
 }
 #carbon-ads a {
   display: inline-block;
@@ -81,7 +87,8 @@ export default {
   color: #7f8c8d;
 }
 #carbon-ads img {
-  width: 125px;
+  float: left;
+  padding-right: 10px;
 }
 #carbon-ads .carbon-img,
 #carbon-ads .carbon-text {
@@ -90,16 +97,16 @@ export default {
   color: #34495e;
 }
 #carbon-ads .carbon-text {
-  margin-top: 6px;
+  padding-top: 6px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
 }
 #carbon-ads .carbon-poweredby {
-  color: #aaa ;
-  font-weight: normal ;
-  line-height: 1.2 ;
+  color: #aaa;
+  font-weight: normal;
+  line-height: 1.2;
   margin-top: 6px;
 }
 #carbon-ads.carbon-mobile {
@@ -108,6 +115,7 @@ export default {
   right: 0;
   bottom: 0;
   padding: 0;
+  margin-bottom: 15px;
   .carbon-img {
     float: left;
     margin-right: 10px;

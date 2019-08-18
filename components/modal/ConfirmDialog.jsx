@@ -21,6 +21,7 @@ export default {
       maskStyle,
       okButtonProps,
       cancelButtonProps,
+      closable = false,
     } = props;
     const iconType = props.iconType || 'question-circle';
     const okType = props.okType || 'primary';
@@ -62,6 +63,7 @@ export default {
         wrapClassName={classNames({ [`${contentPrefixCls}-centered`]: !!centered })}
         onCancel={e => close({ triggerCancel: true }, e)}
         visible={visible}
+        closable={closable}
         title=""
         transitionName="zoom"
         footer=""
@@ -79,8 +81,12 @@ export default {
         <div class={`${contentPrefixCls}-body-wrapper`}>
           <div class={`${contentPrefixCls}-body`}>
             <Icon type={iconType} />
-            <span class={`${contentPrefixCls}-title`}>{props.title}</span>
-            <div class={`${contentPrefixCls}-content`}>{props.content}</div>
+            <span class={`${contentPrefixCls}-title`}>
+              {typeof props.title === 'function' ? props.title(h) : props.title}
+            </span>
+            <div class={`${contentPrefixCls}-content`}>
+              {typeof props.content === 'function' ? props.content(h) : props.content}
+            </div>
           </div>
           <div class={`${contentPrefixCls}-btns`}>
             {cancelButton}

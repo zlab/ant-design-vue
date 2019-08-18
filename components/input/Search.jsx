@@ -9,6 +9,7 @@ import PropTypes from '../_util/vue-types';
 
 export default {
   name: 'AInputSearch',
+  inheritAttrs: false,
   model: {
     prop: 'value',
     event: 'change.value',
@@ -77,6 +78,8 @@ export default {
     const { prefixCls, inputPrefixCls, size, ...others } = getOptionProps(this);
     const suffix = getComponentFromProp(this, 'suffix');
     const enterButton = getComponentFromProp(this, 'enterButton');
+    const addonAfter = getComponentFromProp(this, 'addonAfter');
+    const addonBefore = getComponentFromProp(this, 'addonBefore');
     const buttonOrIcon = this.getButtonOrIcon();
     let searchSuffix = suffix ? [suffix, buttonOrIcon] : buttonOrIcon;
     if (Array.isArray(searchSuffix)) {
@@ -99,6 +102,8 @@ export default {
         prefixCls: inputPrefixCls,
         size,
         suffix: searchSuffix,
+        addonAfter,
+        addonBefore,
       },
       attrs: this.$attrs,
       on: {
