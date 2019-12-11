@@ -1,12 +1,11 @@
 <script>
 import axios from 'axios';
 const carbonUrls = {
-  'vuecomponent.github.io':
-    '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=vuecomponentgithubio',
-  'tangjinzhou.gitee.io':
-    '//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=tangjinzhougiteeio',
-  'ant-design-vue.gitee.io':
-    '//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=antdesignvuegiteeio',
+  'www.antdv.com': '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=antdvcom',
+  // 'tangjinzhou.gitee.io':
+  //   '//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=tangjinzhougiteeio',
+  // 'ant-design-vue.gitee.io':
+  //   '//cdn.carbonads.com/carbon.js?serve=CK7DL2JN&placement=antdesignvuegiteeio',
   'vue.ant.design': '//cdn.carbonads.com/carbon.js?serve=CK7DL2JW&placement=vueantdesign',
 };
 const carbonUrl =
@@ -63,6 +62,7 @@ export default {
 #carbon-ads {
   width: 280px;
   float: right;
+  margin-top: 75px;
   position: relative;
   right: 0;
   bottom: 0;
@@ -116,6 +116,7 @@ export default {
   bottom: 0;
   padding: 0;
   margin-bottom: 15px;
+  margin-top: 5px;
   .carbon-img {
     float: left;
     margin-right: 10px;

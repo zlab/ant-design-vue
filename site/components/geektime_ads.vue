@@ -2,17 +2,13 @@
   <div
     v-if="isEffective(effectiveTime)"
     id="geektime-ads"
-    :class="isMobile ? 'geektime-ads-mobile':''"
+    :class="isMobile ? 'geektime-ads-mobile' : ''"
   >
     <a
-      href="https://time.geekbang.org/column/intro/216?utm_term=zeusH8E0I&utm_source=website&utm_medium=tangjinzhou"
+      href="https://time.geekbang.org/column/intro/154?utm_term=zeusGZFFE&utm_source=app&utm_medium=tangjinzhou"
       target="_blank"
     >
-      <img
-        height="100"
-        alt="浏览器工作原理与实践"
-        src="http://pvrd7go2h.bkt.clouddn.com/geektime-browser.jpeg"
-      />
+      <img height="100" alt="重学前端" src="https://qn.antdv.com/chongxueqianduan.jpg" />
     </a>
   </div>
 </template>
@@ -62,4 +58,3 @@ export default {
   margin-bottom: 15px;
 }
 </style>
-

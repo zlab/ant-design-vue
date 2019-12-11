@@ -220,7 +220,7 @@ const Tree = {
           checkedKeyEntity = parseCheckedKeys(props.defaultCheckedKeys) || {};
         } else if (treeNode) {
           // If treeNode changed, we also need check it
-          checkedKeyEntity = {
+          checkedKeyEntity = parseCheckedKeys(props.checkedKeys) || {
             checkedKeys: prevState._checkedKeys,
             halfCheckedKeys: prevState._halfCheckedKeys,
           };
@@ -380,7 +380,7 @@ const Tree = {
     },
 
     onNodeDoubleClick(e, treeNode) {
-      this.__emit('doubleclick', e, treeNode);
+      this.__emit('dblclick', e, treeNode);
     },
 
     onNodeSelect(e, treeNode) {
